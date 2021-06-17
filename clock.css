@@ -1,0 +1,108 @@
+.hidden {
+  display: none;
+}
+body {
+  margin: auto;
+}
+img {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+}
+form {
+  position: absolute;
+  width: 400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-top: 230px;
+}
+h1 {
+  position: absolute;
+  width: 190px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-top: 230px;
+}
+h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 55px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  color: white;
+  font-size: 50px;
+}
+h3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 125px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  color: white;
+  font-size: 30px;
+}
+
+.todo-form {
+  position: absolute;
+  width: 400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+}
+ul {
+  position: absolute;
+  width: 400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 380px;
+  font-size: 30px;
+  color: white;
+}
+button {
+  margin-left: 15px;
+}
+
+input {
+  width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+}
+::placeholder {
+  color: white;
+}
+#quote {
+  position: absolute;
+  color: white;
+  margin-top: 680px;
+  left: 10px;
+}
+#weather {
+  position: absolute;
+  right: 10px;
+  width: 100px;
+  color: white;
+  top: 10px;
+}
