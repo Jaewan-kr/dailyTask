@@ -18,10 +18,11 @@
     <form id="todo-form" class="todo-form">
         <input type="text" placeholder="Write a to do" required>
     </form>
-    <ul id="todo-list">
-
-    </ul>
-
+    <div class="list">
+        <ul id="todo-list" class="container"></ul>
+        <ul id="done-list" class="container"></ul>
+    </div>
+    <p>Drag and Drop your task in the green box if you have completed your task</p>
     <div id="quote">
         <span></span>
         <span></span>
@@ -31,7 +32,7 @@
         <span></span>
     </div>
 
-    <script src="config.js"></script>
+    <!-- <script src="config.js"></script> -->
     <script src="clock.js"></script>
     <script src="date.js"></script>
     <script src="todo.js"></script>

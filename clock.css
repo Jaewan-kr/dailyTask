@@ -49,7 +49,7 @@ h3 {
   margin-top: 125px;
   margin-left: auto;
   margin-right: auto;
-  width: 275px;
+  width: 300px;
   color: white;
   font-size: 30px;
 }
@@ -63,21 +63,40 @@ h3 {
   margin-right: auto;
   margin-top: 300px;
 }
+.list {
+  text-align: center;
+}
 ul {
-  position: absolute;
+  display: inline-block;
   width: 400px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 380px;
+  height: 220px;
+  margin-top: 410px;
   font-size: 30px;
   color: white;
+  border: 5px solid red;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  list-style-position: inside;
+  padding-left: 0px;
+}
+#done-list {
+  border: 5px solid green;
+  margin-left: 30px;
 }
 button {
   margin-left: 15px;
 }
-
+li {
+  border: 1px solid white;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.dragging {
+  opacity: 0.5;
+}
 input {
   width: 400px;
   padding: 12px 20px;
@@ -93,11 +112,17 @@ input {
 ::placeholder {
   color: white;
 }
-#quote {
-  position: absolute;
+p {
   color: white;
-  margin-top: 680px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+#quote {
+  color: white;
+  top: 800px;
   left: 10px;
+  text-align: center;
 }
 #weather {
   position: absolute;

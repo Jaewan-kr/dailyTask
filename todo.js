@@ -24,9 +24,56 @@ function paintToDo(newTodo) {
   const button = document.createElement("button");
   button.innerText = "❎";
   button.addEventListener("click", deleteToDo);
+  li.setAttribute("draggable", "true");
+  li.classList.add("draggable");
   li.appendChild(span);
   li.appendChild(button);
   toDoList.appendChild(li);
+}
+
+function dragndrop() {
+  const draggables = document.querySelectorAll("ul li");
+  const containers = document.querySelectorAll(".container");
+
+  draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", () => {
+      draggable.classList.add("dragging");
+    });
+    draggable.addEventListener("dragend", () => {
+      draggable.classList.remove("dragging");
+    });
+    containers.forEach((container) => {
+      container.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const afterElement = getDragAfterElement(container, e.clientX);
+        const draggable = document.querySelector(".dragging");
+        if (afterElement == null) {
+          container.appendChild(draggable);
+        } else {
+          container.insertBefore(draggable, afterElement);
+        }
+      });
+    });
+    function getDragAfterElement(container, x) {
+      const draggableElements = [
+        ...container.querySelectorAll(".draggable:not(.dragging)"),
+      ];
+
+      draggableElements.reduce(
+        (closest, child) => {
+          const box = child.getBoundingClientRect();
+          const offset = x - box.top - box.height / 2;
+          console.log(offset);
+          if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+          } else {
+            return closest;
+          }
+        },
+        { offset: Number.POSITIVE_INFINITY }
+      );
+    }
+  });
 }
 
 function handleToDoSubmit(event) {
@@ -51,3 +98,5 @@ if (savedToDos !== null) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
 }
+
+dragndrop();
